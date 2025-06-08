@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>우리 반 주식 앱</title>
+  <script type="module" src="app.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; }
+    #adminPanel, #tradeSection { margin-top: 20px; border: 1px solid #ccc; padding: 10px; }
+    input, select, button { margin: 5px 0; padding: 5px; width: 100%; box-sizing: border-box; }
+    button { cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<h2>우리 반 주식 앱</h2>
+
+<div id="loginSection">
+  <input id="emailInput" type="email" placeholder="이메일 입력 (예: 5101@51.com 또는 jjh@51.com)" />
+  <input id="passwordInput" type="password" placeholder="비밀번호 입력 (예: 123456)" />
+  <button id="loginBtn">로그인</button>
+  <div id="loginStatus"></div>
+</div>
+
+<div id="tradeSection" style="display:none;">
+  <h3>주식 매수 / 매도</h3>
+  <select id="stockSelect">
+    <option value="AAPL">애플</option>
+    <option value="INTC">인텔</option>
+    <option value="AMD">AMD</option>
+    <option value="NVDA">엔비디아</option>
+    <option value="TSMC">TSMC</option>
+    <option value="MSFT">마이크로소프트</option>
+  </select>
+  <input id="stockAmount" type="number" placeholder="주식 수량 입력" />
+  <button id="buyBtn">매수</button>
+  <button id="sellBtn">매도</button>
+  <div id="tradeStatus"></div>
+  <button id="logoutBtn">로그아웃</button>
+</div>
+
+<div id="adminPanel" style="display:none;">
+  <h3>관리자 패널</h3>
+
+  <h4>출금 신청 내역</h4>
+  <div id="withdrawalList">로딩 중...</div>
+
+  <h4>대출 신청 내역</h4>
+  <div id="loanList">로딩 중...</div>
+
+  <h4>시드머니 추가</h4>
+  <input type="text" id="seedUserEmail" placeholder="사용자 이메일 (예: 5101@51.com)" />
+  <input type="number" id="seedAmount" placeholder="금액" />
+  <button id="addSeedMoneyBtn">추가</button>
+</div>
+
+</body>
+</html>
